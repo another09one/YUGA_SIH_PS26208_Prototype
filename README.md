@@ -1,38 +1,24 @@
-# YUGA — SIH PS 26208 Prototype
+# YUGA — SIH PS 26208 Optimized Prototype
 
-A frontend prototype for Smart India Hackathon PS ID 26208 (Toys & Games), focused on learning Indian civilization, history and culture through interactive games.
+### Random question system
+Every time a player starts a game:
+- the full question pool is shuffled;
+- 5 questions are selected;
+- every question's answer options are independently shuffled;
+- the correct-answer index is recalculated.
 
-## Run locally
+Thus each new game produces a different sequence and different option positions.
 
-No installation is required.
+### Optimization
+- No external libraries or network calls.
+- Small static assets.
+- Event-driven hash routing.
+- Only the active view is rendered.
+- LocalStorage for instant local persistence.
+- Responsive CSS.
+- Reduced-motion support.
+- User-generated text is HTML-escaped.
 
-1. Extract the ZIP.
-2. Open `index.html` in a browser.
+Open `index.html` directly or deploy the folder to GitHub Pages.
 
-For GitHub Pages:
-- Keep `index.html` in the root of the repository.
-- Keep `style.css`, `app.js`, and `data.js` in the same folder.
-- Commit/push all files.
-- Enable GitHub Pages from Settings → Pages.
-- Select the branch and `/root`.
-
-## Included
-
-- Responsive landing page
-- Game library
-- 3 playable game modes
-- 15 cultural/history questions
-- Instant scoring and explanations
-- XP and level system
-- Achievements
-- Leaderboard
-- Player profile
-- Recent game history
-- Culture/heritage section
-- Interactive-map concept section
-- LocalStorage persistence
-- No backend required for the demo
-
-## Important
-
-This is a prototype. For a production version, connect authentication, scores and content to Supabase or another backend, and replace demo leaderboard entries with real users.
+For real accounts across devices, use Supabase Auth + database and move score validation/randomization server-side.
